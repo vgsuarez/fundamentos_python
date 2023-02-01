@@ -5,6 +5,8 @@ user_option = user_option.capitalize()
 
 option = ['Piedra', 'Papel', 'Tijera']
 
+#hay diferentes maneras de usar random
+
 computer_option = (random.choice(option))
 
 if computer_option == ("Piedra"):
