@@ -16,6 +16,7 @@ my_tuple = ('nico', 'julio', 'santi')
 for element in my_tuple:
     print(element)
 '''
+'''
 product = {
     'name': 'Camisa',
     'price': 100,
@@ -26,3 +27,21 @@ product = {
 
 for key, value in product.items():
     print(key, '=>', value)
+    
+'''
+people = [
+    {
+        'name': 'nico',
+        'edad': 25
+    },
+    {
+        'name': 'julia',
+        'edad': 30
+    },
+    {
+        'name': 'lucas',
+        'edad': 13
+    }
+]
+for person in people:
+    print('name =>', person['name'])
