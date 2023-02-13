@@ -13,8 +13,8 @@ while True:
     print('*' * 10)
     print('ROUND', rounds)
     print('*' * 10)
-    print('COMPUTADORA', computer_wins)
-    print('USUARIO', user_wins)
+    print('COMPUTADORA ', computer_wins)
+    print('USUARIO ', user_wins)
     print(' ')
 
     user_option = input('Elige Piedra, Papel o Tijera => ')
