@@ -1,42 +1,86 @@
 import random
 
-user_option = input('Elige Piedra, Papel o Tijera => ')
-user_option = user_option.capitalize()
-
 option = ['Piedra', 'Papel', 'Tijera']
 
-#hay diferentes maneras de usar random
+computer_wins = 0
+user_wins = 0
 
-computer_option = (random.choice(option))
+rounds = 1
 
-if computer_option == ("Piedra"):
-    print("Computer elige Piedra")
-elif computer_option == ("Papel"):
-    print("Computer elige Papel")
-else:
-    print("Computer elige Tijera")
+while True:
 
-if user_option == computer_option:
-    print("Empate")
-elif user_option == "Piedra":
-    if computer_option == "Tijera":
-        print("Piedra gana a Tijera")
-        print("User Gano!!")
+    print(' ')
+    print('*' * 10)
+    print('ROUND', rounds)
+    print('*' * 10)
+    print('COMPUTADORA', computer_wins)
+    print('USUARIO', user_wins)
+    print(' ')
+
+    user_option = input('Elige Piedra, Papel o Tijera => ')
+    user_option = user_option.capitalize()
+    if not user_option in option:
+        print('-' * 20)
+        print('*' * 10)
+        print('ELIJE UNA OPCION CORRECTA')
+        print('*' * 10)
+        print('-' * 20)
+        continue
+    rounds += 1
+
+    computer_option = (random.choice(option))
+
+    if computer_option == ("Piedra"):
+        print("Computer elige Piedra")
+    elif computer_option == ("Papel"):
+        print("Computer elige Papel")
     else:
-        print("Papel gana a Piedra")
-        print("Computer Gano")
+        print("Computer elige Tijera")
 
-elif user_option == "Papel":
-    if computer_option == "Piedra":
-        print("Papel gana a Piedra")
-        print("User Gano!!")
-    else:
-        print("Tijera gana a Papel")
-        print("Computer Gano")
-elif user_option == "Tijera":
-    if computer_option == "Papel":
-        print("Tijera gana a Papel")
-        print("User Gano!!")
-    else:
-        print("Piedra gana a Tijera")
-        print("Computer Gano")
+    if user_option == computer_option:
+        print("Empate")
+
+    elif user_option == "Piedra":
+        if computer_option == "Tijera":
+            print("Piedra gana a Tijera")
+            print("User Gano!!")
+            user_wins += 1
+        else:
+            print("Papel gana a Piedra")
+            print("Computer Gano")
+            computer_wins += 1
+
+    elif user_option == "Papel":
+        if computer_option == "Piedra":
+            print("Papel gana a Piedra")
+            print("User Gano!!")
+            user_wins += 1
+        else:
+            print("Tijera gana a Papel")
+            print("Computer Gano")
+            computer_wins += 1
+
+    elif user_option == "Tijera":
+        if computer_option == "Papel":
+            print("Tijera gana a Papel")
+            print("User Gano!!")
+            user_wins += 1
+        else:
+            print("Piedra gana a Tijera")
+            print("Computer Gano")
+            computer_wins += 1
+
+    if computer_wins == 2:
+        print('*' * 20)
+        print('-' * 20)
+        print('PERDISTE, LA COMPUTADORA GANO')
+        print('-' * 20)
+        print('*' * 20)
+        break
+    if user_wins == 2:
+        print('*' * 20)
+        print('-' * 20)
+        print('VICTORIA!!!!, MUCHAS FELICIDADES')
+        print('-' * 20)
+        print('*' * 20)
+        break
