@@ -22,12 +22,13 @@ product = {
     'price': 100,
     'stock': 89
 }
+'''
 # for key in product:
 #     print(key, '=>', product[key])
-
+'''
 for key, value in product.items():
     print(key, '=>', value)
-    
+'''
 '''
 people = [
     {
@@ -43,5 +44,17 @@ people = [
         'edad': 13
     }
 ]
-for person in people:
+for person in people:   
     print('name =>', person['name'])
+'''
+'''
+primos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+primos[3:10:2]
+
+city = 'casa'
+print(city)
+'''
+
+city = 'NY'
+if city == 'NY':
+    print('Welcome to new york city')
